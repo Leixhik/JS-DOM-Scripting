@@ -33,3 +33,4 @@ enlaces[0].classList.add('nueva-clase'); // Método para agregar nueva clase al 
 
 console.log(nuevoEnlace);
 
+// Ejemplo para Github
