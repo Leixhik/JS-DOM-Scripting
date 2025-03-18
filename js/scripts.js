@@ -15,22 +15,42 @@ enlaces[0].classList.add('nueva-clase'); // Método para agregar nueva clase al 
 // const heading2 = document.getElementById('heading'); //Como ya está buscando x ID no necesita el #.
 // console.log(heading2);
 
-// // 1. Generar un nuevo enlace
-// const nuevoEnlace = document.createElement('A');
+// 1. Generar un nuevo enlace
+const nuevoEnlace = document.createElement('A');
 
-// // 2. Agregar el Href
-// nuevoEnlace.href = 'nuevo-enlace.html';
+// 2. Agregar el Href
+nuevoEnlace.href = 'nuevo-enlace.html';
 
-// // 3. Agregar el Texto
-// nuevoEnlace.textContent = 'Un Nuevo Enlace';
+// 3. Agregar el Texto
+nuevoEnlace.textContent = 'Un Nuevo Enlace';
 
-// // 4. Agregar la Clase
-// nuevoEnlace.classList.add('navegacion__enlace');
+// 4. Agregar la Clase
+ nuevoEnlace.classList.add('navegacion__enlace');
 
-// // 5. Agregarlo al Documento
-// const navegacion = document.querySelector('.navegacion');
-// navegacion.appendChild(nuevoEnlace);
+// 5. Agregarlo al Documento
+ const navegacion = document.querySelector('.navegacion');
+ navegacion.appendChild(nuevoEnlace);
 
 console.log(nuevoEnlace);
 
-// Ejemplo para Github
+// Eventos
+
+console.log(1);
+
+window.addEventListener('load', function(){ // Load espera a que el JS y los archivos que dependen del HTML estén listos.
+    console.log(2);
+});
+
+window.onload = function(){ // Igual que el anterior.
+    console.log(3);
+};
+
+document.addEventListener('DOMContentLoaded', function(){ // Solo espera a que el HTML esté listo, no espera a CSS o imágenes.
+    console.log(4);
+});
+
+console.log(5);
+
+window.onscroll = function(){
+    console.log('scrolling...');
+};
