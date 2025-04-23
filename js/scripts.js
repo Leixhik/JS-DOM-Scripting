@@ -89,9 +89,14 @@ formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
 
     // Validar el formulario
+    const {nombre, email, mensaje} = datos;
+    console.log(nombre);
+    console.log(email);
+    console.log(mensaje);
 
     // Enviar el formulario
-    
+
+    console.log('Enviando Formulario');
 });
 
 function leerTexto(e) {
