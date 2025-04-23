@@ -25,11 +25,11 @@ nuevoEnlace.href = 'nuevo-enlace.html';
 nuevoEnlace.textContent = 'Un Nuevo Enlace';
 
 // 4. Agregar la Clase
- nuevoEnlace.classList.add('navegacion__enlace');
+nuevoEnlace.classList.add('navegacion__enlace');
 
 // 5. Agregarlo al Documento
- const navegacion = document.querySelector('.navegacion');
- navegacion.appendChild(nuevoEnlace);
+const navegacion = document.querySelector('.navegacion');
+navegacion.appendChild(nuevoEnlace);
 
 console.log(nuevoEnlace);
 
@@ -56,15 +56,15 @@ console.log(nuevoEnlace);
 // };
 
 // Seleccionar elementos y asociarles un evento
-const btnEnviar = document.querySelector('.boton--primario');
-btnEnviar.addEventListener('click', function(evento){
-    console.log(evento);
-    evento.preventDefault();
+// const btnEnviar = document.querySelector('.boton--primario');
+// btnEnviar.addEventListener('click', function(evento){
+//     console.log(evento);
+//     evento.preventDefault();
 
-    // Util para validar un formulario
-    
-    console.log('Enviando Formulario');
-});
+//     // Util para validar un formulario
+
+//     console.log('Enviando Formulario');
+// });
 
 // Eventos de lo Inputs y Textareas
 
@@ -77,17 +77,26 @@ const datos = {
 const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
 const mensaje = document.querySelector('#mensaje');
+const formulario = document.querySelector('.formulario');
+
 
 nombre.addEventListener('input', leerTexto);
 email.addEventListener('input', leerTexto);
 mensaje.addEventListener('input', leerTexto);
 
-function leerTexto(e){
+// El evento de Submit
+formulario.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+
+    // Validar el formulario
+
+    // Enviar el formulario
+    
+});
+
+function leerTexto(e) {
     // console.log(e.target.value);
-
     datos[e.target.id] = e.target.value; // Guardar el valor en el objeto datos.
-
     // console.log(e.target);
-
     console.log(datos);
 }
