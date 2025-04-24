@@ -89,13 +89,18 @@ formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
 
     // Validar el formulario
-    const {nombre, email, mensaje} = datos;
-    console.log(nombre);
-    console.log(email);
-    console.log(mensaje);
+    const {nombre, email, mensaje} = datos; // Destructuring para obtener los valores de datos.
+    if(nombre === '' || email === '' || mensaje === '') {
+        mostrarError('Todos los campos son obligatorios');
+        return; // Corta la ejecución del código
+    } else if(email.indexOf('@') === -1){
+        mostrarError('El email no es válido'); // Si no hay un @ en el email, se muestra el error.
+        return; // Corta la ejecución del código
+    }else {
+        mostrarMensajeExito('Mensaje Enviado Correctamente'); // Si todo está bien, se muestra el mensaje de éxito.
+    }
 
     // Enviar el formulario
-
     console.log('Enviando Formulario');
 });
 
@@ -103,5 +108,33 @@ function leerTexto(e) {
     // console.log(e.target.value);
     datos[e.target.id] = e.target.value; // Guardar el valor en el objeto datos.
     // console.log(e.target);
-    console.log(datos);
-}
+    // console.log(datos);
+};
+
+// Mostrar un error en pantalla
+function mostrarError(mensaje){
+    const error = document.createElement('P');
+    error.textContent = mensaje;
+    error.classList.add('error');
+
+    formulario.appendChild(error);
+
+    // Eliminar el error después de 3 segundos
+    setTimeout(()=>{
+        error.remove();
+    }, 5000);
+};
+
+// Mostrar un mensaje de Éxito
+function mostrarMensajeExito(mensaje){
+    const correcto = document.createElement('P');
+    correcto.textContent = mensaje;
+    correcto.classList.add('correcto');
+
+    formulario.appendChild(correcto);
+
+    // Eliminar el error después de 3 segundos
+    setTimeout(()=>{
+        correcto.remove();
+    }, 5000);
+};
