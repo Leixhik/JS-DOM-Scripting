@@ -119,11 +119,17 @@ function mostrarError(mensaje){
 
     formulario.appendChild(error);
 
-    // Eliminar el error después de 3 segundos
+    // Eliminar el error después de 5 segundos
     setTimeout(()=>{
         error.remove();
     }, 5000);
 };
+
+//Mostrar Alerta
+function mostrarAlerta(mensaje){
+    const alerta = document.createElement('P');
+    alerta.textContent = mensaje;
+}
 
 // Mostrar un mensaje de Éxito
 function mostrarMensajeExito(mensaje){
